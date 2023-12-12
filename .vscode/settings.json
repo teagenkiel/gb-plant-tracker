@@ -1,0 +1,61 @@
+{
+  // "editor.formatOnSave": true,
+  // Disable format on save, so we can use the code actions
+  // Runs Prettier, then ESLint, then organizes imports, in that order
+  "editor.codeActionsOnSave": {
+    "source.formatDocument": "always",
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "javascript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "npm.packageManager": "yarn",
+  "eslint.packageManager": "yarn",
+  "eslint.rules.customizations": [
+    { "rule": "prettier/prettier", "severity": "info" }
+  ],
+  "workbench.colorCustomizations": {
+    "editorInfo.foreground": "#FF69B4",
+    "titleBar.activeBackground": "#00A36C",
+    "statusBar.background": "#00A36C",
+    "titleBar.activeForeground": "#000000",
+    "statusBar.foreground": "#000000"
+  },
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "task.allowAutomaticTasks": "on"
+}
