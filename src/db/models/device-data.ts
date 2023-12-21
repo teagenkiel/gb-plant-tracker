@@ -20,6 +20,6 @@ const deviceDataSchema = new mongoose.Schema({
 });
 
 const DeviceDataModel =
-  mongoose.models.DeviceData || mongoose.model("DeviceData", deviceDataSchema);
+  mongoose.models?.DeviceData || mongoose.model("DeviceData", deviceDataSchema);
 
 export default DeviceDataModel;
