@@ -1,13 +1,13 @@
 "use server";
 import { fetchDeviceData } from "@/db/actions/device-data.actions";
+import { cookies } from "next/headers";
 
 export default async function Home({
-  params,
   searchParams,
 }: {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: { [key: string]: string | undefined };
 }) {
+  const cookies1 = cookies();
   const deviceData = await fetchDeviceData();
   return (
     <div className="grow">
