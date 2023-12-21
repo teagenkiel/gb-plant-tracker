@@ -3,7 +3,7 @@ await import("./src/env.mjs");
 
 const nextConfig = {
   experimental: {
-    serverComponentsExternalPackages: ["mongoose"],
+    //serverComponentsExternalPackages: ["mongoose"],
   },
 };
 
