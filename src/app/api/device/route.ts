@@ -1,3 +1,5 @@
+import { pushDeviceData } from "@/db/actions/device-data.actions";
+import { deviceDataSchema } from "@/types/types";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -13,6 +15,10 @@ export async function HEAD(request: Request) {}
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
+  console.log(data);
+  const parsedData = deviceDataSchema.parse(data);
+  console.log(parsedData);
+  const result = await pushDeviceData(parsedData);
   return NextResponse.json({ data });
 }
 
