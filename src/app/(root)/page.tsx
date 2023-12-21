@@ -1,7 +1,13 @@
 "use server";
 import { fetchDeviceData } from "@/db/actions/device-data.actions";
 
-export default async function Home() {
+export default async function Home({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
   const deviceData = await fetchDeviceData();
   return (
     <div className="grow">
