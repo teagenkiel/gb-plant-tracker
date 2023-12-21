@@ -10,7 +10,7 @@ export const pushDeviceData = async (input: {
 }) => {
   const { deviceName, moistureValue } = input;
   try {
-    connectToDB();
+    await connectToDB();
 
     const createdDeviceData = await DeviceDataModel.create({
       id: randomUUID(),
@@ -24,7 +24,7 @@ export const pushDeviceData = async (input: {
 };
 
 export const fetchDeviceData = async (): Promise<DeviceData[]> => {
-  connectToDB();
+  await connectToDB();
 
   const deviceData = await DeviceDataModel.find();
   return deviceData;
