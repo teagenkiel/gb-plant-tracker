@@ -1,3 +1,4 @@
+"use client";
 import { fetchDeviceData } from "@/db/actions/device-data.actions";
 
 export default async function Home() {
