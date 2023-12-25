@@ -4,11 +4,8 @@ import { connectToDB } from "@/db/mongoose";
 import { DeviceData } from "@/types/types";
 import { randomUUID } from "crypto";
 
-export const pushDeviceData = async (input: {
-  deviceName: String;
-  moistureValue: Number;
-}) => {
-  const { deviceName, moistureValue } = input;
+export const pushDeviceData = async (input: DeviceData) => {
+  const { deviceName, moistureValue, temperatureValue } = input;
   try {
     await connectToDB();
 
@@ -16,6 +13,7 @@ export const pushDeviceData = async (input: {
       id: randomUUID(),
       deviceName,
       moistureValue,
+      temperatureValue,
       createdAt: new Date(),
     });
   } catch (error: any) {

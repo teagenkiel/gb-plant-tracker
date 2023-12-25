@@ -3,6 +3,7 @@ import z from "zod";
 export const deviceDataSchema = z.object({
   deviceName: z.string(),
   moistureValue: z.number(),
+  temperatureValue: z.number(),
 });
 
 export type DeviceData = z.infer<typeof deviceDataSchema>;
