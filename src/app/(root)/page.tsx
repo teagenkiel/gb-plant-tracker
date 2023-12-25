@@ -1,7 +1,10 @@
 import { fetchDeviceData } from "@/db/actions/device-data.actions";
+import { cookies } from "next/headers";
 
 export default async function Home() {
+  const cookies2 = cookies();
   const deviceData = await fetchDeviceData();
+
   return (
     <div className="grow">
       <h1 className="text-white">Device Data</h1>
