@@ -1,13 +1,6 @@
-"use server";
 import { fetchDeviceData } from "@/db/actions/device-data.actions";
-import { cookies } from "next/headers";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | undefined };
-}) {
-  const cookies1 = cookies();
+export default async function Home() {
   const deviceData = await fetchDeviceData();
   return (
     <div className="grow">
@@ -24,13 +17,3 @@ export default async function Home({
     </div>
   );
 }
-
-// This function gets called at build time
-// export async function getStaticPaths() {
-//   return {
-//     // Only `/posts/1` and `/posts/2` are generated at build time
-//     // Enable statically generating additional pages
-//     // For example: `/posts/3`
-//     fallback: true,
-//   };
-// }
