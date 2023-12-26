@@ -24,6 +24,11 @@ export const pushDeviceData = async (input: DeviceData) => {
 export const fetchDeviceData = async (): Promise<DeviceData[]> => {
   await connectToDB();
 
+  console.log("Fetching device data");
+
   const deviceData = await DeviceDataModel.find();
+
+  console.log("Device data found: ", deviceData);
+
   return deviceData;
 };
