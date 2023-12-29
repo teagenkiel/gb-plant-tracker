@@ -1,10 +1,10 @@
 "use server";
 import DeviceDataModel from "@/db/models/device-data";
 import { connectToDB } from "@/db/mongoose";
-import { DeviceData } from "@/types/types";
+import { DeviceData, DeviceDataUnsaved } from "@/types/types";
 import { randomUUID } from "crypto";
 
-export const pushDeviceData = async (input: DeviceData) => {
+export const pushDeviceData = async (input: DeviceDataUnsaved) => {
   const { deviceName, moistureValue, temperatureValue } = input;
   try {
     await connectToDB();
