@@ -1,4 +1,5 @@
 import { fetchDeviceData } from "@/db/actions/device-data.actions";
+import { cookies } from "next/headers";
 
 export default async function Home({
   searchParams,
@@ -6,7 +7,7 @@ export default async function Home({
   searchParams: { [key: string]: string | undefined };
 }) {
   const deviceData = await fetchDeviceData();
-  console.log(deviceData);
+  const cookies1 = cookies();
   return (
     <div className="grow">
       <h1 className="text-white">Device Data</h1>
