@@ -1,3 +1,4 @@
+import { DataChartPanel } from "@/app/(root)/data-chart";
 import { fetchDeviceData } from "@/db/actions/device-data.actions";
 import { cookies } from "next/headers";
 
@@ -8,19 +9,12 @@ export default async function Home({
 }) {
   const deviceData = await fetchDeviceData();
   const cookies1 = cookies();
+
+  const dataset = deviceData.filter((data) => data.deviceName === "1318250");
+
   return (
     <div className="grow">
-      <h1 className="text-white">Device Data</h1>
-      <ul className="text-white">
-        {deviceData.map((data, i) => (
-          <li key={i}>
-            <p>
-              Name: {data.deviceName} Moisture Value: {data.moistureValue}{" "}
-              Temperature Value: {data.temperatureValue}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <DataChartPanel data={dataset} />
     </div>
   );
 }
