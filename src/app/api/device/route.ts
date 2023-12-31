@@ -24,7 +24,9 @@ export async function POST(request: NextRequest) {
     ...parsedData,
   });
 
-  const response = { deepSleepTime: 15e6, data };
+  const deepSleepTime = 60e6 * 30; //30 minutes
+
+  const response = { deepSleepTime, data };
   return NextResponse.json(response);
 }
 
