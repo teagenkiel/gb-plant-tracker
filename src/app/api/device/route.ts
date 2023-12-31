@@ -23,7 +23,9 @@ export async function POST(request: NextRequest) {
     deviceName: parsedData.deviceId,
     ...parsedData,
   });
-  return NextResponse.json({ data });
+
+  const response = { deepSleepTime: 15e6, data };
+  return NextResponse.json(response);
 }
 
 export async function PUT(request: Request) {}
