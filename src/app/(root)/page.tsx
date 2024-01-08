@@ -10,7 +10,9 @@ export default async function Home({
   const deviceData = await fetchDeviceData();
   const cookies1 = cookies();
 
-  const dataset = deviceData.filter((data) => data.deviceName === "1318250");
+  const dataset = deviceData.filter(
+    (data) => data.deviceName === "1318250" && data.temperatureValue < 200
+  );
 
   return (
     <div className="grow">

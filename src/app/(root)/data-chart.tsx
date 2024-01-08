@@ -39,7 +39,9 @@ export const DataChartPanel: React.FC<DataChartPanelProps> = (props) => {
     },
   };
 
-  const labels = props.data.map((data) => formatDate(data.createdAt, "HH:mm"));
+  const labels = props.data.map((data) =>
+    formatDate(data.createdAt, "m/d HH:mm")
+  );
 
   const data = {
     labels,
